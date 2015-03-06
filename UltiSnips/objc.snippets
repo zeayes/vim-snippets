@@ -1,5 +1,9 @@
 priority -50
 
+extends c
+
+priority -49
+
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
@@ -9,7 +13,7 @@ snippet imp "#import (imp)" b
 endsnippet
 
 snippet Imp "#import <> (Imp)"
-#import <${1:Cocoa/Cocoa.h}>
+#import <${1:Foundation/Foundation.h}>
 endsnippet
 
 snippet cl "020 Class (objc)"
@@ -174,9 +178,9 @@ $0
 endsnippet
 
 snippet pool "NSAutoreleasePool (pool)"
-NSAutoreleasePool *pool = [NSAutoreleasePool new];
-$0
-[pool drain];
+@autoreleasepool {
+	$0
+}
 endsnippet
 
 snippet log "NSLog (log) 2"
@@ -205,7 +209,7 @@ snippet objacc "Object Accessors Interface (objacc)"
 endsnippet
 
 snippet prop "Property"
-@property (${1/^(e)$|.*/(?1:r)/}${1:r}${1/^(?:(r)|(e)|(c)|(a))$|.*/(?1:etain)(?2:adonly)(?3:opy)(?4:ssign)/}) ${2:NSSomeClass}$ *${3:${2/^[A-Z](?:[A-Z]+|[a-z]+)([A-Z]\w*)/\l$1/}};
+@property (${1/^(e)$|.*/(?1:r)/}${1:r}${1/^(?:(r)|(e)|(c)|(a))$|.*/(?1:etain)(?2:adonly)(?3:opy)(?4:ssign)/}) ${2:NSSomeClass} *${3:${2/^[A-Z](?:[A-Z]+|[a-z]+)([A-Z]\w*)/\l$1/}};
 endsnippet
 
 snippet getprefs "Read from defaults (getprefs)"
